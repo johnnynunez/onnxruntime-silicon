@@ -6,7 +6,7 @@ on:
       tag:
         description: 'Version Tag'
         required: false
-        default: 'v1.16.3'
+        default: 'v1.17.1'
       label:
         description: 'Additional label for release'
         required: false
@@ -20,16 +20,16 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ 'macos-13-large' ]
-        python-version: [ '3.8', '3.9', '3.10' ]
+        os: [ 'macos-14-large' ]
+        python-version: [ '3.9', '3.10', '3.11', '3.12' ]
   
     runs-on: ${{ matrix.os }}
 
     name: ${{ github.event.inputs.tag }} python ${{ matrix.python-version }} on ${{ matrix.os }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       

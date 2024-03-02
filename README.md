@@ -29,7 +29,7 @@ The pre-built wheel packages should be in the `dist` directory.
 
 > pip install onnxruntime-silicon returns the following error: Could not find a version that satisfies the requirement onnxruntime-silicon
 
-This indicates either that the Python version is not supported (currently only `3.8`, `3.9`, `3.10`, `3.11`) or that the python installation is not built for `arm64`. You can check this by running the following command: 
+This indicates either that the Python version is not supported (currently only `3.9`, `3.10`, `3.11`, `3.12`) or that the python installation is not built for `arm64`. You can check this by running the following command: 
 
 ```bash
 file $(which python) | grep -q arm64 && echo "Python for arm64 found" || echo "Python for arm64 has not been found"
